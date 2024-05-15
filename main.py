@@ -266,8 +266,8 @@ if __name__ == '__main__':
 
     np.random.seed(16)  # Same random seed for consistency. Also applies to random_state of 0.
 
-    X, Y = preprocessing(do_pca=False,
-                         show_plot=False)  # X and Y are the same data as the dataloaders but without the PremDataset/Dataloader Wrappers
+    X, Y = preprocessing(do_pca=False,show_plot=False)  # X and Y are the same data as the dataloaders but without the PremDataset/Dataloader Wrappers
+
 
     ###### Generate parameter combinations (each is a list) ######
     model_type_list = ["Nonlinear", "Linear"]
@@ -289,8 +289,8 @@ if __name__ == '__main__':
                                                       random_state=0)  # Split into two sets, A and B (A is testing, B contains training and validation data that will be indexed in different combinations)
 
     ### RUN VALIDATION SPLITS ###
-    for o in param_lists:
-        u = runKFold(X, Y, 42 , param_list=o)
+    # for o in param_lists:
+    #     u = runKFold(X, Y, 42 , param_list=o)
     ### RUN VALIDATION SPLITS ###
 
     #### TEST MOST OPTIMAL NEURAL NET MODEL ####
